@@ -5,8 +5,8 @@
     .sidebar__user--nemu
       username01
       .sidebar__user--icon
-        %i.fa.fa-edit
-        %i.fa.fa-cog
+        = fa_icon("edit")
+        = fa_icon("cog")
     .sidebar__contents
       %p.sidebar__contents--groups hogehoge
       %p.sidebar__contents--messege hohohohoho
@@ -19,18 +19,18 @@
     .main__chatgroup--contents
       .main__chatgroup--theme Sampleグループ
       .main__chatgroup--text MEMBER:hoge
-    %input.main__chatgroup--edit-btn{:href => "#", :type => "submit", :value => "Edit"}/
+    %input.main__chatgroup--edit-btn{href: "#", type: "submit", value: "Edit"}/
   .main__chatcomments
-    .main__chat-contens
+    .main__chat-contents
       .main__chat-comments--user ほげお
       .main__chat-comments--text なるほど〜〜
-    .main__chat-contens
+    .main__chat-contents
       .main__chat-comments--user hogemi
       .main__chat-comments--text へえ〜〜
-    .main__chat-contens
+    .main__chat-contents
       .main__chat-comments--user ryousuke
       .main__chat-comments--text ここにはコメントが入ります。
   .main__chat-form
-    %input.main__chat-for--input{:placeholder => "input messeage"}/
+    %input.main__chat-for--input{placeholder: "input messeage"}/
     %i.fa.fa-image
-    %input.main__chat-form--btn{:href => "#", :type => "submit", :value => "Send"}/
+    %input.main__chat-form--btn{href: "#", type: "submit", value: "Send"}/
