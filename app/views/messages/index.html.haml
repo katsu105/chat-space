@@ -1,5 +1,5 @@
-.header
-  .header__comment チャットグループが生成されました。
+/ .header
+/   .header__comment チャットグループが生成されました。
 .sidebar
   .sidebar__user
     .sidebar__user--nemu
@@ -7,8 +7,8 @@
       .sidebar__user--icon
         %i.fa.fa-edit
         %i.fa.fa-cog
-         = link_to edit_user_path(current_user) do
-          = fa_icon 'cog', class: 'icon'
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
     .sidebar__contents
       %p.sidebar__contents--groups hogehoge
       %p.sidebar__contents--messege hohohohoho
