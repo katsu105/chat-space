@@ -1,6 +1,6 @@
 .main {
   width: 1150px;
-  height: 800px;
+  height: 600px;
   padding: 30px 0px 0px 300px;
 }
 
@@ -11,7 +11,6 @@
 }
 
 .main__chatgroup--contents {
-  display: inline;
   float: left;
 }
 
@@ -36,7 +35,7 @@
 
 .main__chatcomments {
   width: 1150px;
-  height: 560px;
+  height: 100%;
   /*background-color: #AAAAAA;*/
   padding-left: 40px
 }
@@ -53,30 +52,85 @@
   font-size: 14px;
   color: #434A54;
 }
-.main__chat-form {
-  display: inline;
+
+.form {
   width: 1150px;
-  height: 50px;
-  margin: 20px 0px 20px 50px;
+  background-color: #DDDDDD;
+  box-sizing: border-box;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  position: absolute;
+  bottom: 0;
+
+
+  &__message {
+    border: none;
+    float: left;
+    height: 50px;
+    width: calc(100% - 150px);
+  }
+  &__mask {
+    background-color: white;
+    float: left;
+    height: 50px;
+    padding-right: 10px;
+    &__image {
+      font-size: 20px;
+      line-height: 50px;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+  &__submit {
+    background-color: #38AEF0;
+    border: none;
+    color: white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
 }
 
-.main__chat-for--input {
-  display: inline-block;
-  font-size: 16px;
-  color: #434A54;
-  height: 50px;
-  width: 900px;
-}
 
-.fa-image {
-  padding-left: 20px;
-}
+// }
+// .main__chat-form {
+//   background-color: #DDDDDD;
+//   box-sizing: border-box;
+//   height: 90px;
+//   padding: 20px 50px 20px 40px;
+//   // width: 1050px;
+//   // height: 50px;
+//   // margin: 20px 0px 20px 50px;
+//   position: absolute;
+//   bottom: 0;
+// }
 
-.main__chat-form--btn {
-  width: 70px;
-  height: 50px;
-  background-color: #38AEF0;
-  text-align: center;
-  float: right;
-  margin: 0px 40px 0px 40px;
-}
+// .main__chat-form--input {
+//   font-size: 16px;
+//   color: #434A54;
+//   height: 50px;
+//   width: 900px;
+//   padding-left: 200px;
+//   float: left;
+// }
+
+// .fa-image {
+//   padding-left: 20px;
+// }
+
+// .main__chat-form--btn {
+//   width: 70px;
+//   height: 50px;
+//   background-color: #38AEF0;
+//   text-align: center;
+//   float: right;
+//   margin: 0px 40px 0px 40px;
+// }
+// .clearfix::after {
+//   content: '';
+//   display: block;
+//   clear: both;
+// }

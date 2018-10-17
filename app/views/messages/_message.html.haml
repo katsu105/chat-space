@@ -1,0 +1,24 @@
+.main__chatcomments
+  .main__chat-comments--user
+    = message.user.name
+  / .main__chat-comments--text
+  /   ここに時間が入ります。
+  / = format_posted_time(message.created_at)
+  .main__chat-comments--text
+  - if message.content.present?
+    %p.lower-message__content
+      = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+
+/ .main__chatcomments
+/   .main__chat-comments--user
+/     = message.user.name
+/   .main__chat-comments--text
+/     ここに時間が入ります。
+/     / = format_posted_time(message.created_at)
+/ .lower-meesage
+/   - if message.content.present?
+/     %p.lower-message__content
+/       = message.content
+/   = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

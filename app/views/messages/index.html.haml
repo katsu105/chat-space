@@ -1,8 +1,6 @@
-/ .header
-/   .header__comment チャットグループが生成されました。
 .sidebar
   .sidebar__user
-    .sidebar__user--nemu
+    %h3.sidebar__user--nemu
       = current_user.name
       .sidebar__user--icon
         %i.fa.fa-edit
@@ -12,26 +10,38 @@
           = link_to edit_user_path(current_user) do
             = fa_icon 'cog', class: 'icon'
     .sidebar__contents
-       - current_user.groups.each do |group|
+      - current_user.groups.each do |group|
         = link_to group_messages_path(group) do
-      %p.sidebar__contents--groups
-        = group.name
-      %p.sidebar__contents--messege 
-        = メッセージはまだありません。
+          .sidebar__contents--groups
+            = group.name
+          .sidebar__contents--messege
+            メッセージはまだありません。
 .main
   .main__chatgroup
     .main__chatgroup--contents
       .main__chatgroup--theme Sampleグループ
       .main__chatgroup--text MEMBER:hoge
     %input.main__chatgroup--edit-btn{href: "#", type: "submit", value: "Edit"}/
-  .main__chatcomments
-    .main__chat-comments--user ほげお
-    .main__chat-comments--text なるほど〜〜
-    .main__chat-comments--user hogemi
-    .main__chat-comments--text へえ〜〜
-    .main__chat-comments--user ryousuke
-    .main__chat-comments--text ここにはコメントが入ります。
-  .main__chat-form
-    %input.main__chat-for--input{placeholder: "input messeage"}/
-    %i.fa.fa-image
-    %input.main__chat-form--btn{href: "#", type: "submit", value: "Send"}/
+
+  .messages
+    = render @messages
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+
+  / .main__chat-form
+  /   = form_for [@group, @message] do |f|
+  /     = f.text_field :content, class: '.main__chat-form--input', placeholder: 'type a message'
+  /     .main__chat-form--input
+  /       = f.label :image, class: 'form__mask__image' do
+  /         = fa_icon 'picture-o', class: 'icon'
+  /         = f.file_field :image, class: 'hidden'
+  /       = f.submit 'Send', class: '.main__chat-form--btn'
+
+
