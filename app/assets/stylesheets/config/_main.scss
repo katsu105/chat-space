@@ -2,22 +2,22 @@
   width: 1150px;
   height: 600px;
   padding: 30px 0px 0px 300px;
-}
-
-.main__chatgroup {
+  .main__chatgroup {
   width: 1150px;
   height: 120px;
   border-bottom: thin solid #eeeeee;
+
 }
 
 .main__chatgroup--contents {
   float: left;
-}
-
-.main__chatgroup--theme {
+  .main__chatgroup--theme {
   padding: 35px 0px 0px 40px;
   font-size: 20px;
   color: #333333;
+      }
+    }
+  }
 }
 
 .main__chatgroup--text {
@@ -45,6 +45,7 @@
   font-size: 16px;
   font-weight: bold;
   color: #434A54;
+  }
 }
 
 .main__chat-comments--text {
