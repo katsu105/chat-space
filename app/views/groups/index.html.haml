@@ -1,0 +1,35 @@
+.sidebar.clearfix
+  .sidebar__user
+    %h3.sidebar__user--nemu
+      = current_user.name
+      .sidebar__user--icon
+        %i.list
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
+        %i.list
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
+    .sidebar__contents
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .sidebar__contents--groups
+            = group.name
+          .sidebar__contents--messege
+            = group.show_last_message
+
+.main
+  .main__chatgroup
+    .main__chatgroup--contents
+    /   .main__chatgroup--theme Sampleグループ
+    /   .main__chatgroup--text MEMBER:hoge
+    / %input.main__chatgroup--edit-btn{:href => "#", :type => "submit", :value => "Edit"}/
+  / .main__chatcomments
+  /   .main__chat-comments--user ほげお
+  /   .main__chat-comments--text なるほど〜〜
+  /   .main__chat-comments--user hogemi
+  /   .main__chat-comments--text へえ〜〜
+  /   .main__chat-comments--user ryousuke
+  /   .main__chat-comments--text ここにはコメントが入ります。
+
+ 
+
