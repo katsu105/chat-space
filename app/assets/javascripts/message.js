@@ -1,5 +1,6 @@
 $(function(){
    function buildHTML(message){
+
     var html =
               `<div class="main__chatcomments">
                 <div class="main__chat-comments--user">
@@ -8,9 +9,9 @@ $(function(){
                 <div class="main__chat-comments--text"></div>
                   <p class="lower-message__content">
                     ${message.content}
-                    ${message.image}
+                    <img class="lower-message__image" src="${message.image}" >
                   </p>
-              </div>`
+                </div>`
 
     return html;
   }
@@ -30,10 +31,10 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       $('.form__message').val('')
+      $("html,body").animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(data){
       alert('error');
-      console.log(data)
     })
   })
 });
