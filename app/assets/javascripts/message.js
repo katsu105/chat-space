@@ -1,6 +1,12 @@
 $(function(){
    function buildHTML(message){
 
+    var message_image = ""
+
+    if(message.image)
+      {var message_image = `<img class="lower-message__image" src="${message.image}" >`
+    }
+
     var html =
               `<div class="main__chatcomments">
                 <div class="main__chat-comments--user">
@@ -8,12 +14,15 @@ $(function(){
                 </div>
                 <div class="main__chat-comments--text"></div>
                   <p class="lower-message__content">
-                    ${message.content}
-                    <img class="lower-message__image" src="${message.image}" >
+                    ${message.content}<br />
+                    ${message_image}
                   </p>
                 </div>`
 
     return html;
+
+    //  <img class="lower-message__image" src="${message.image}" >
+
   }
   $(".new_message").on("submit", function(e){
     e.preventDefault();
