@@ -1,5 +1,7 @@
 $(function() {
 
+  // インクリメンタルサーチの実装
+
   var search_list = $("#user-search-result");
 
 function appendUser(user) {
@@ -18,7 +20,20 @@ function appendUser(user) {
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    console.log(input)
+
+    // -------------------------------
+
+    //検索されたユーザーの追加の実装
+
+    
+
+  $(".chat-group-user").on("click", ".user-search-add", function() {
+    var add = $(".user-search-add").val();
+    console.log("クリックイベント発火してます!!")
+  })
+
+    // -------------------------------
+
 
     $.ajax({
       type: 'GET',
@@ -32,7 +47,6 @@ function appendUser(user) {
       if (user.length !== 0) {
        user.forEach(function(user){
          appendUser(user);
-         console.log("hugehuge")
        });
      }
      else {
