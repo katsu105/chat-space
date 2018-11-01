@@ -21,8 +21,6 @@ $(function(){
 
     return html;
 
-    //  <img class="lower-message__image" src="${message.image}" >
-
   }
   $(".new_message").on("submit", function(e){
     e.preventDefault();
