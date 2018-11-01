@@ -1,7 +1,7 @@
  // 検索したユーザーを追加する実装
 
  $(function() {
-  var add_list = $(".add-user")
+  var add_list = $("#add-user")
    function appendAddUser(user_id, user_name) {
 
    var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
