@@ -1,6 +1,9 @@
 .main__chatcomments{"data-message-id": message.id}
-  .main__chat-comments--user
-    = message.user.name
+  .main__user
+    .main__chat-comments--user
+      = message.user.name
+      .main__chat-comments--date
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
   .main__chat-comments--text
   - if message.content.present?
     %p.lower-message__content

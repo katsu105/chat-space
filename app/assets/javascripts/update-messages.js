@@ -6,18 +6,24 @@ function buildHTML(message) {
     if(message.image)
       {var message_image = `<img class="lower-message__image" src="${message.image}" >`
     }
-    var html =
+   var html =
               `<div class="main__chatcomments" data-message-id="${message.id}" >
-                <div class="main__chat-comments--user">
-                  ${message.name}
+                <div class="main__user">
+                  <div class="main__chat-comments--user">
+                    ${message.name}
+                    <div class="main__chat-comments--date">
+                      ${message.date}
+                    </div>
+                  </div>
                 </div>
                 <div class="main__chat-comments--text"></div>
                   <p class="lower-message__content">
                     ${message.content}<br />
-                    ${message_image}
                   </p>
+                    ${message_image}
                 </div>`
     return html;
+
   }
 
     var interval = setInterval(function() {
