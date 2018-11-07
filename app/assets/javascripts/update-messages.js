@@ -35,7 +35,6 @@ function buildHTML(message) {
 
     .done(function(json) {
       var id = $('.main__chatcomments').last().data('message-id');
-      console.log(id)
       var insertHTML = '';
       json.messages.forEach(function(message) {
         if (message.id > id ) {
