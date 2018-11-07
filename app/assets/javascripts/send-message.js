@@ -8,7 +8,7 @@ $(function(){
     }
 
     var html =
-              `<div class="main__chatcomments">
+              `<div class="main__chatcomments" data-message-id="${message.id}" >
                 <div class="main__chat-comments--user">
                   ${message.name}
                 </div>
@@ -18,7 +18,6 @@ $(function(){
                     ${message_image}
                   </p>
                 </div>`
-
     return html;
 
   }
