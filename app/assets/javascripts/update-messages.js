@@ -25,25 +25,23 @@ function buildHTML(message) {
   }
 
     var interval = setInterval(function() {
+
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      var message_id = $('.main__chatcomments').last().data('message-id');
+      var messageLastId = $('.main__chatcomments:last').data('message-id');
     $.ajax({
       url: location.href,
       type: 'GET',
       data: {
-        message: { id: message_id }
+        message: { id: messageLastId }
       },
       dataType: 'json'
     })
 
     .done(function(json) {
-      var id = $('.main__chatcomments').last().data('message-id');
       var insertHTML = '';
       json.messages.forEach(function(message) {
-        if (message.id > id ) {
           insertHTML += buildHTML(message);
           $("html,body").animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
-        }
       });
       $('.messages').append(insertHTML);
     })
