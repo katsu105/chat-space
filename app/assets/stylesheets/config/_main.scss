@@ -39,17 +39,28 @@
   padding-left: 40px
 }
 
+.main__user {
+}
+
 .main__chat-comments--user {
   padding-top: 40px;
   font-size: 16px;
   font-weight: bold;
   color: #434A54;
-  }
+  .main__chat-comments--date {
+  font-weight: normal;
+  font-size: 12px;
+  color: #999999;
+  margin-left: 10px;
+  display: inline-block;
+}
+}
 
 .main__chat-comments--text {
   padding-top: 10px;
   font-size: 14px;
   color: #434A54;
+
 }
 
 .form {
@@ -90,6 +101,12 @@
     margin-left: 15px;
     padding: 0 30px;
   }
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 
