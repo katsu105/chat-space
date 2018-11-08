@@ -1,7 +1,5 @@
 function buildHTML(message) {
-　var insertImage = '';
   var message_image = ""
-  $("html,body").animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
 
     if(message.image)
       {var message_image = `<img class="lower-message__image" src="${message.image}" >`
@@ -29,15 +27,14 @@ function buildHTML(message) {
     var interval = setInterval(function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       var message_id = $('.main__chatcomments').last().data('message-id');
-    $.ajax({ //ajax通信で以下のことを行う
-      url: location.href, //urlは現在のページを指定
-      type: 'GET', //メソッドを指定
-      data: { //railsに引き渡すデータは
-        message: { id: message_id } //このような形(paramsの形をしています)で、'id'には'message_id'を入れる
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        message: { id: message_id }
       },
-      dataType: 'json' //データはjson形式
+      dataType: 'json'
     })
-      // 現在のアクションからデータを取得することができる。.jsonをつけることでデータの型を指定できる。
 
     .done(function(json) {
       var id = $('.main__chatcomments').last().data('message-id');
@@ -45,7 +42,7 @@ function buildHTML(message) {
       json.messages.forEach(function(message) {
         if (message.id > id ) {
           insertHTML += buildHTML(message);
-
+          $("html,body").animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
         }
       });
       $('.messages').append(insertHTML);
@@ -56,7 +53,3 @@ function buildHTML(message) {
      } else {
     clearInterval(interval);
    }} , 5 * 1000 );
-
-  // if文でページの指定 locationメソッド
-  // doneメソッドの時にbuildHTMLが走るようにする。
-  // var message_id = $('.main__chatcomments').last().data('message-id');
