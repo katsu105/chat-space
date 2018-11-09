@@ -21,13 +21,11 @@ function buildHTML(message) {
                     ${message_image}
                 </div>`
     return html;
-
   }
 
     var interval = setInterval(function() {
-
-      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      var messageLastId = $('.main__chatcomments:last').data('message-id');
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+  var messageLastId = $('.main__chatcomments:last').data('message-id') || 0
     $.ajax({
       url: location.href,
       type: 'GET',
@@ -40,8 +38,8 @@ function buildHTML(message) {
     .done(function(json) {
       var insertHTML = '';
       json.messages.forEach(function(message) {
-          insertHTML += buildHTML(message);
-          $("html,body").animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
+        insertHTML += buildHTML(message);
+        $("html,body").animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
       });
       $('.messages').append(insertHTML);
     })
