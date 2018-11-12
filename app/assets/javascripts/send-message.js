@@ -1,3 +1,5 @@
+$(document).on('turbolinks:load', function() {
+
 $(function(){
    function buildHTML(message){
 
@@ -48,4 +50,6 @@ $(function(){
       alert('error');
     })
   })
-});
+})
+
+})
