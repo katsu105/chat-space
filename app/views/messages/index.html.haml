@@ -22,8 +22,8 @@
       .main__chatgroup--theme #{@group.name}
       .main__chatgroup--text MEMBER: #{current_user.name}
 
-
-    %input.main__chatgroup--edit-btn{href: "/groups/#{@group.id}/edit", type: "submit", value: "Edit"}/
+     %input.main__chatgroup--edit-btn
+      = link_to "Edit", edit_group_path(params[:group_id]), method: :get
 
   .messages
     = render @messages
