@@ -22,8 +22,9 @@
       .main__chatgroup--theme #{@group.name}
       .main__chatgroup--text MEMBER: #{current_user.name}
 
-     .main__chatgroup--edit-btn
-       = link_to "Edit", edit_group_path(params[:group_id]), method: :get
+
+    .main__chatgroup--edit-btn
+      = link_to "EDIT", edit_group_path(params[:group_id]), method: :get
 
   .messages
     = render @messages
@@ -36,3 +37,15 @@
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
+
+  / .main__chat-form
+  /   = form_for [@group, @message] do |f|
+  /     = f.text_field :content, class: '.main__chat-form--input', placeholder: 'type a message'
+  /     .main__chat-form--input
+  /       = f.label :image, class: 'form__mask__image' do
+  /         = fa_icon 'picture-o', class: 'icon'
+  /         = f.file_field :image, class: 'hidden'
+  /       = f.submit 'Send', class: '.main__chat-form--btn'
+
+
+
