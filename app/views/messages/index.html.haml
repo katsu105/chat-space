@@ -23,7 +23,7 @@
       .main__chatgroup--text MEMBER: #{current_user.name}
 
      .main__chatgroup--edit-btn
-      = link_to "Edit", edit_group_path(params[:group_id]), method: :get
+       = link_to "Edit", edit_group_path(params[:group_id]), method: :get
 
   .messages
     = render @messages
