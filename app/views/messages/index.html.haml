@@ -23,8 +23,7 @@
       .main__chatgroup--text MEMBER: #{current_user.name}
 
 
-    / %input.main__chatgroup--edit-btn{href: "/groups/#{@group.id}/edit", type: "submit", value: "Edit"}/
-    = link_to 'Edit', '/groups/#{@group.id}/edit', class: 'main__chatgroup--edit-btn'
+    %input.main__chatgroup--edit-btn{href: "/groups/#{@group.id}/edit", type: "submit", value: "Edit"}/
 
   .messages
     = render @messages
