@@ -33,6 +33,10 @@
   text-align: center;
 }
 
+.messages {
+  height: calc(100vh - 150px - 90px);
+}
+
 .main__chatcomments {
   width: 1150px;
   height: 100%;
@@ -64,9 +68,7 @@
 
 }
 
-.messages {
-  height: calc(100vh - 150px - 90px);
-}
+
 
 .form {
   width: 1150px;
