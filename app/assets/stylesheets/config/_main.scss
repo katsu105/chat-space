@@ -33,13 +33,13 @@
   text-align: center;
 }
 
-// .messages {
-//   height: calc(100vh - 150px - 90px);
-// }
+.messages {
+  height: calc(100vh - 150px - 90px);
+  position: relative;
+}
 
 .main__chatcomments {
   width: 1150px;
-  height: 100%;
   /*background-color: #AAAAAA;*/
   padding-left: 40px
 }
@@ -58,7 +58,7 @@
   color: #999999;
   margin-left: 10px;
   display: inline-block;
-}
+  }
 }
 
 .main__chat-comments--text {
@@ -76,8 +76,8 @@
   box-sizing: border-box;
   height: 90px;
   padding: 20px 50px 20px 40px;
+  position: fixed;
   bottom: 0;
-  position: relative;
 
 
   &__message {
